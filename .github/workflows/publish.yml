@@ -55,7 +55,7 @@ jobs:
         run: npm run build
 
       - name: Generate token
-        run: npm create token
+        run: npm token create
 
       - name: Publish to npm
         run: npm publish
