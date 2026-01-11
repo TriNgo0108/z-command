@@ -1,5 +1,5 @@
 {
-  "name": "z-command",
+  "name": "@zimezone/z-command",
   "version": "1.0.0",
   "description": "Install curated GitHub Copilot skills and agents for your project",
   "main": "dist/cli.js",
