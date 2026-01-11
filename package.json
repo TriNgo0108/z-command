@@ -6,6 +6,10 @@
   "bin": {
     "z-command": "dist/cli.js"
   },
+  "repository": { 
+    "type": "git", 
+    "url": "https://github.com/TriNgo0108/z-command.git"
+  },
   "scripts": {
     "build": "tsc",
     "dev": "ts-node src/cli.ts",
