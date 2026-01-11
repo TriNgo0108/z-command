@@ -4,7 +4,7 @@
   "description": "Install curated GitHub Copilot skills and agents for your project",
   "main": "dist/cli.js",
   "bin": {
-    "z-command": "./dist/cli.js"
+    "z-command": "dist/cli.js"
   },
   "scripts": {
     "build": "tsc",
