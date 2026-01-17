@@ -108,6 +108,7 @@ export const PLATFORMS: Record<Exclude<Platform, 'all'>, PlatformConfig> = {
     projectDir: '.agent',
     globalDir: '.gemini/antigravity',
     agentsDir: 'workflows',
+    globalAgentsDir: 'global_workflows',
     skillsDir: 'skills',
     sharedDir: '.shared',
     agentExtension: '.md',

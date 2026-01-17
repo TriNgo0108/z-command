@@ -15,6 +15,8 @@ export interface PlatformConfig {
   globalDir: string;
   /** Subdirectory for agents/workflows/rules */
   agentsDir: string;
+  /** Custom subdirectory for global agents/workflows (overrides agentsDir if set) */
+  globalAgentsDir?: string;
   /** Subdirectory for skills (null if not supported) */
   skillsDir: string | null;
   /** Shared resources directory for complex skills (null if not used) */

@@ -86,7 +86,10 @@ async function installForPlatform(
 
   // Install agents
   if (installAgents) {
-    agentsCount = await copyAgents(targetBase, platform, templatesDir, options.category);
+  // Install agents
+  if (installAgents) {
+    agentsCount = await copyAgents(targetBase, platform, templatesDir, options.global, options.category);
+  }
   }
 
   return {
@@ -198,10 +201,17 @@ async function copyAgents(
   targetBase: string,
   platform: PlatformConfig,
   templatesDir: string,
+  isGlobal: boolean = false,
   category?: string
 ): Promise<number> {
   const agentsSource = path.join(templatesDir, 'agents');
-  const agentsTarget = path.join(targetBase, platform.agentsDir);
+  
+  // Determine target directory (use globalAgentsDir if global mode and defined)
+  const agentsDir = (isGlobal && platform.globalAgentsDir) 
+    ? platform.globalAgentsDir 
+    : platform.agentsDir;
+    
+  const agentsTarget = path.join(targetBase, agentsDir);
 
   if (!await fs.pathExists(agentsSource)) {
     console.log(chalk.yellow('  ⚠ No agents templates found'));
