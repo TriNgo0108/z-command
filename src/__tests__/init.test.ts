@@ -113,16 +113,16 @@ describe('initCommand', () => {
     });
   });
 
-  describe('sharedDir functionality', () => {
-    it('should copy shared resources for antigravity', async () => {
+  describe('antigravity self-contained skills', () => {
+    it('should keep skills self-contained without copying to shared folder', async () => {
       // Mock structure: skills/complex-skill/{SKILL.md, data/, scripts/}
       fs.readdir.mockImplementation((p: string) => {
         const pStr = String(p);
         if (pStr.endsWith('skills')) return Promise.resolve(['complex-skill']);
         if (pStr.endsWith('complex-skill')) return Promise.resolve(['SKILL.md', 'data', 'scripts']);
-        // Important: return empty for data and scripts to stop recursion
-        if (pStr.endsWith('data')) return Promise.resolve([]);
-        if (pStr.endsWith('scripts')) return Promise.resolve([]);
+        // Return files for data and scripts subdirectories
+        if (pStr.endsWith('data')) return Promise.resolve(['styles.csv']);
+        if (pStr.endsWith('scripts')) return Promise.resolve(['search.py']);
         return Promise.resolve([]);
       });
 
@@ -135,20 +135,24 @@ describe('initCommand', () => {
         return Promise.resolve({ isDirectory: () => false, isFile: () => true });
       });
 
-      // Mock pathExists to return true for shared resources checks
       fs.pathExists.mockImplementation((p: string) => {
          const pStr = String(p);
-         if (pStr.includes('complex-skill')) return Promise.resolve(true); 
-         // allow default checks to pass
+         // Target files don't exist yet (so they get written)
+         if (pStr.includes('.agent/skills')) return Promise.resolve(false);
+         // Source files exist
          return Promise.resolve(true);
       });
 
+      fs.readFile.mockResolvedValue('---\nname: test\n---\npython3 .claude/skills/complex-skill/scripts/search.py');
+
       await initCommand({ target: 'antigravity' });
 
-      // Should copy data and scripts
-      // We expect fs.copy to be called for data and scripts
-      expect(fs.copy).toHaveBeenCalledTimes(2);
-      expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining('Shared resources'));
+      // Antigravity has sharedDir: null, so fs.copy should NOT be called for shared resources
+      // Skills are self-contained - data/ and scripts/ stay inside the skill directory
+      expect(consoleLogSpy).not.toHaveBeenCalledWith(expect.stringContaining('Shared resources'));
+      
+      // Verify skill was installed
+      expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining('Skill: complex-skill'));
     });
   });
 });
