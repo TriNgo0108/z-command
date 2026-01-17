@@ -62,6 +62,8 @@ z-command list --agents
 z-command update
 ```
 
+This command will clone the remote repositories, flatten the structure, renamed files to avoid collisions, and skip any agents that you have locally customized or explicitly excluded.
+
 ## Included Templates
 
 ### Skills
@@ -74,8 +76,12 @@ z-command update
 | `security-review`         | OWASP Top 10 vulnerability detection          |
 | `writing-plans`           | Detailed implementation plans                 |
 | `ui-ux-pro-max`           | AI design intelligence for professional UI/UX |
+| `bash-defensive-patterns` | Robust shell scripting patterns               |
+| `python-packaging`        | Modern Python packaging (uv, poetry)          |
+| `react-modernization`     | Modernizing React codebases                   |
+| `rust-async-patterns`     | Async Rust implementation patterns            |
 
-### Agents (80 total)
+### Agents (150+ total)
 
 **01. Core Development**
 
@@ -108,6 +114,11 @@ z-command update
 - `kotlin-specialist`
 - `csharp-developer`
 - `cpp-pro`
+- `rust-pro`
+- `ruby-pro`
+- `php-pro`
+- `bash-pro`
+- `c-pro`
 
 **03. Infrastructure**
 
@@ -242,6 +253,7 @@ This project aggregates best practices from:
 - [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents)
 - [OneRedOak/claude-code-workflows](https://github.com/OneRedOak/claude-code-workflows)
 - [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) - UI/UX design intelligence
+- [wshobson/agents](https://github.com/wshobson/agents) - 100+ specialized agents and skills
 
 ## License
 
