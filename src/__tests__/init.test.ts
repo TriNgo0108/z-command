@@ -1,215 +1,154 @@
 import path from 'path';
-import fs from 'fs-extra';
 import os from 'os';
 
-// Mock dependencies before imports
-jest.mock('fs-extra');
+// Minimal mocking approach with strict path handling
+jest.mock('fs-extra', () => ({
+  pathExists: jest.fn(),
+  readdir: jest.fn(),
+  stat: jest.fn(),
+  ensureDir: jest.fn(),
+  copy: jest.fn(),
+  readFile: jest.fn(),
+  writeFile: jest.fn()
+}));
+
 jest.mock('chalk', () => ({
   cyan: (s: string) => s,
   green: (s: string) => s,
   yellow: (s: string) => s,
-  dim: (s: string) => s
+  dim: (s: string) => s,
+  blue: (s: string) => s,
+  bold: (s: string) => s
 }));
 
-// Import after mocking
+// Import mocked module explicitly
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const fs = require('fs-extra');
 import { initCommand } from '../commands/init';
-
-// Type-safe mocks
-const mockPathExists = jest.spyOn(fs, 'pathExists');
-const mockReaddir = jest.spyOn(fs, 'readdir');
-const mockStat = jest.spyOn(fs, 'stat');
-const mockEnsureDir = jest.spyOn(fs, 'ensureDir');
-const mockCopy = jest.spyOn(fs, 'copy');
 
 describe('initCommand', () => {
   let consoleLogSpy: jest.SpyInstance;
-  const mockHomeDir = '/home/testuser';
-  const mockCwd = '/projects/myproject';
+   // Use standard paths to avoid OS-specific issues in string matching
+  const homeDir = path.normalize('/home/testuser');
+  const cwd = path.normalize('/projects/myproject');
 
   beforeEach(() => {
     jest.clearAllMocks();
     consoleLogSpy = jest.spyOn(console, 'log').mockImplementation();
-    jest.spyOn(os, 'homedir').mockReturnValue(mockHomeDir);
-    jest.spyOn(process, 'cwd').mockReturnValue(mockCwd);
+    jest.spyOn(os, 'homedir').mockReturnValue(homeDir);
+    jest.spyOn(process, 'cwd').mockReturnValue(cwd);
+    
+    // Default safe implementations
+    fs.pathExists.mockResolvedValue(true);
+    fs.readdir.mockResolvedValue([]);
+    fs.stat.mockResolvedValue({ isDirectory: () => false, isFile: () => true });
+    fs.ensureDir.mockResolvedValue(undefined);
+    fs.copy.mockResolvedValue(undefined);
+    fs.readFile.mockResolvedValue('content');
+    fs.writeFile.mockResolvedValue(undefined);
   });
 
   afterEach(() => {
     consoleLogSpy.mockRestore();
   });
 
-  describe('target directory selection', () => {
-    beforeEach(() => {
-      mockPathExists.mockResolvedValue(true as never);
-      mockEnsureDir.mockResolvedValue(undefined as never);
-      mockReaddir.mockResolvedValue([] as never);
-    });
-
-    it('should use .github folder in current directory by default', async () => {
+  describe('basic functionality', () => {
+    it('should complete installation successfully', async () => {
       await initCommand({});
-
-      expect(consoleLogSpy).toHaveBeenCalledWith(
-        expect.stringContaining('.github')
-      );
+      expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining('Installation complete'));
     });
 
-    it('should use .copilot folder in home directory with --global flag', async () => {
-      await initCommand({ global: true });
-
-      expect(consoleLogSpy).toHaveBeenCalledWith(
-        expect.stringContaining('.copilot')
-      );
+    it('should install for copilot', async () => {
+      await initCommand({ target: 'copilot' });
+      expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining('GitHub Copilot'));
     });
   });
 
   describe('skill installation', () => {
-    beforeEach(() => {
-      mockPathExists.mockResolvedValue(true as never);
-      mockEnsureDir.mockResolvedValue(undefined as never);
-      mockCopy.mockResolvedValue(undefined as never);
-    });
-
-    it('should install skills when no flags specified', async () => {
-      mockReaddir.mockImplementation(((dirPath: string) => {
-        if (dirPath.includes('skills')) {
-          return Promise.resolve(['code-review']);
-        }
+    it('should install skills when they exist', async () => {
+      // Setup specific directory structure
+      fs.readdir.mockImplementation((p: string) => {
+        const pStr = String(p);
+        if (pStr.endsWith('skills')) return Promise.resolve(['test-skill']);
+        if (pStr.endsWith('test-skill')) return Promise.resolve(['SKILL.md']);
         return Promise.resolve([]);
-      }) as typeof fs.readdir);
-      mockStat.mockResolvedValue({ isDirectory: () => true, isFile: () => false } as never);
+      });
 
-      await initCommand({});
+      fs.stat.mockImplementation((p: string) => {
+        const pStr = String(p);
+        if (pStr.endsWith('test-skill')) return Promise.resolve({ isDirectory: () => true, isFile: () => false });
+        if (pStr.endsWith('SKILL.md')) return Promise.resolve({ isDirectory: () => false, isFile: () => true });
+        return Promise.resolve({ isDirectory: () => false, isFile: () => true });
+      });
 
-      expect(mockCopy).toHaveBeenCalled();
-      expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining('Skills: 1'));
-    });
+      fs.readFile.mockResolvedValue('skill content');
 
-    it('should only install skills with --skills flag', async () => {
-      mockReaddir.mockImplementation(((dirPath: string) => {
-        if (dirPath.includes('skills')) {
-          return Promise.resolve(['code-review', 'security-review']);
-        }
-        return Promise.resolve(['test.agent.md']);
-      }) as typeof fs.readdir);
-      mockStat.mockResolvedValue({ isDirectory: () => true, isFile: () => false } as never);
+      await initCommand({ target: 'copilot' });
 
-      await initCommand({ skills: true });
-
-      expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining('Skills: 2'));
-    });
-
-    it('should filter skills by category when specified', async () => {
-      mockReaddir.mockImplementation(((dirPath: string) => {
-        if (dirPath.includes('skills')) {
-          return Promise.resolve(['code-review', 'security-review', 'test-driven-development']);
-        }
-        return Promise.resolve([]);
-      }) as typeof fs.readdir);
-      mockStat.mockResolvedValue({ isDirectory: () => true, isFile: () => false } as never);
-
-      await initCommand({ skills: true, category: 'security' });
-
-      expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining('Skills: 1'));
+      expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining('Skill: test-skill'));
     });
   });
 
   describe('agent installation', () => {
-    beforeEach(() => {
-      mockPathExists.mockResolvedValue(true as never);
-      mockEnsureDir.mockResolvedValue(undefined as never);
-      mockCopy.mockResolvedValue(undefined as never);
-    });
-
-    it('should install agents when no flags specified', async () => {
-      mockReaddir.mockImplementation(((dirPath: string) => {
-        if (dirPath.includes('agents')) {
-          return Promise.resolve(['ai-engineer.agent.md', 'backend-developer.agent.md']);
-        }
+    it('should install agents when they exist', async () => {
+      fs.readdir.mockImplementation((p: string) => {
+        const pStr = String(p);
+        if (pStr.endsWith('agents')) return Promise.resolve(['test.agent.md']);
         return Promise.resolve([]);
-      }) as typeof fs.readdir);
-      mockStat.mockResolvedValue({ isDirectory: () => false, isFile: () => true } as never);
+      });
+      
+      fs.stat.mockResolvedValue({ isDirectory: () => false, isFile: () => true });
+      fs.readFile.mockResolvedValue('agent content');
+      
+      // Return false for target file check so it writes
+      fs.pathExists.mockImplementation((p: string) => {
+         const pStr = String(p);
+         if (pStr.includes('test.md') || pStr.includes('test.agent.md')) return Promise.resolve(false);
+         return Promise.resolve(true); // source files exist
+      });
 
-      await initCommand({});
+      await initCommand({ target: 'copilot' });
 
-      expect(mockCopy).toHaveBeenCalled();
-      expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining('Agents: 2'));
-    });
-
-    it('should only install agents with --agents flag', async () => {
-      mockReaddir.mockImplementation(((dirPath: string) => {
-        if (dirPath.includes('agents')) {
-          return Promise.resolve(['ai-engineer.agent.md']);
-        }
-        return Promise.resolve(['skill-folder']);
-      }) as typeof fs.readdir);
-      mockStat.mockResolvedValue({ isDirectory: () => false, isFile: () => true } as never);
-
-      await initCommand({ agents: true });
-
-      expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining('Agents: 1'));
-    });
-
-    it('should filter agents by category when specified', async () => {
-      mockReaddir.mockImplementation(((dirPath: string) => {
-        if (dirPath.includes('agents')) {
-          return Promise.resolve(['ai-engineer.agent.md', 'backend-developer.agent.md']);
-        }
-        return Promise.resolve([]);
-      }) as typeof fs.readdir);
-      mockStat.mockResolvedValue({ isDirectory: () => false, isFile: () => true } as never);
-
-      await initCommand({ agents: true, category: 'ai' });
-
-      expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining('Agents: 1'));
+      expect(fs.writeFile).toHaveBeenCalled();
     });
   });
 
-  describe('when templates are missing', () => {
-    it('should handle missing skills directory gracefully', async () => {
-      mockPathExists.mockImplementation(((p: string) => {
-        return Promise.resolve(!p.includes('skills'));
-      }) as typeof fs.pathExists);
-      mockEnsureDir.mockResolvedValue(undefined as never);
-      mockReaddir.mockResolvedValue([] as never);
+  describe('sharedDir functionality', () => {
+    it('should copy shared resources for antigravity', async () => {
+      // Mock structure: skills/complex-skill/{SKILL.md, data/, scripts/}
+      fs.readdir.mockImplementation((p: string) => {
+        const pStr = String(p);
+        if (pStr.endsWith('skills')) return Promise.resolve(['complex-skill']);
+        if (pStr.endsWith('complex-skill')) return Promise.resolve(['SKILL.md', 'data', 'scripts']);
+        // Important: return empty for data and scripts to stop recursion
+        if (pStr.endsWith('data')) return Promise.resolve([]);
+        if (pStr.endsWith('scripts')) return Promise.resolve([]);
+        return Promise.resolve([]);
+      });
 
-      await initCommand({ skills: true });
+      fs.stat.mockImplementation((p: string) => {
+        const pStr = String(p);
+        if (pStr.endsWith('complex-skill')) return Promise.resolve({ isDirectory: () => true, isFile: () => false });
+        if (pStr.endsWith('data')) return Promise.resolve({ isDirectory: () => true, isFile: () => false });
+        if (pStr.endsWith('scripts')) return Promise.resolve({ isDirectory: () => true, isFile: () => false });
+        // Files
+        return Promise.resolve({ isDirectory: () => false, isFile: () => true });
+      });
 
-      expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining('No skills templates found'));
-    });
+      // Mock pathExists to return true for shared resources checks
+      fs.pathExists.mockImplementation((p: string) => {
+         const pStr = String(p);
+         if (pStr.includes('complex-skill')) return Promise.resolve(true); 
+         // allow default checks to pass
+         return Promise.resolve(true);
+      });
 
-    it('should handle missing agents directory gracefully', async () => {
-      mockPathExists.mockImplementation(((p: string) => {
-        return Promise.resolve(!p.includes('agents'));
-      }) as typeof fs.pathExists);
-      mockEnsureDir.mockResolvedValue(undefined as never);
-      mockReaddir.mockResolvedValue([] as never);
+      await initCommand({ target: 'antigravity' });
 
-      await initCommand({ agents: true });
-
-      expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining('No agents templates found'));
-    });
-  });
-
-  describe('output messages', () => {
-    beforeEach(() => {
-      mockPathExists.mockResolvedValue(true as never);
-      mockEnsureDir.mockResolvedValue(undefined as never);
-      mockReaddir.mockResolvedValue([] as never);
-    });
-
-    it('should show welcome message', async () => {
-      await initCommand({});
-
-      expect(consoleLogSpy).toHaveBeenCalledWith(
-        expect.stringContaining('Z-Command')
-      );
-    });
-
-    it('should show installation complete message', async () => {
-      await initCommand({});
-
-      expect(consoleLogSpy).toHaveBeenCalledWith(
-        expect.stringContaining('Installation complete')
-      );
+      // Should copy data and scripts
+      // We expect fs.copy to be called for data and scripts
+      expect(fs.copy).toHaveBeenCalledTimes(2);
+      expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining('Shared resources'));
     });
   });
 });

@@ -11,5 +11,8 @@ module.exports = {
     '!src/cli.ts'
   ],
   coverageDirectory: 'coverage',
-  verbose: true
+  verbose: true,
+  // Exclude templates from module resolution
+  modulePathIgnorePatterns: ['<rootDir>/templates/', '<rootDir>/dist/'],
+  watchPathIgnorePatterns: ['<rootDir>/templates/']
 };

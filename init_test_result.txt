@@ -1,0 +1,49 @@
+﻿node : 
+At line:1 char:1
++ node --max-old-space-size=8192 
+node_modules/jest/bin/jest.js "src/__t ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified:  
+   (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandE 
+   rror
+ 
+<--- Last few GCs --->
+
+[27576:000002452D821000]   104966 ms: 
+Mark-Compact 7779.3 (8235.2) -> 7759.6 
+(8231.9) MB, pooled: 12 MB, 240.45 / 0.00 ms 
+ (average mu = 0.100, current mu = 0.057) 
+allocation failure; scavenge might not 
+succeed
+[27576:000002452D821000]   105244 ms: 
+Mark-Compact 7779.7 (8236.4) -> 7762.5 
+(8233.7) MB, pooled: 12 MB, 263.20 / 0.00 ms 
+ (average mu = 0.075, current mu = 0.052) 
+allocation failure; scavenge might not 
+succeed
+
+
+<--- JS stacktrace --->
+
+FATAL ERROR: Ineffective mark-compacts near 
+heap limit Allocation failed - JavaScript 
+heap out of memory
+----- Native stack trace -----
+
+ 1: 00007FF775241427 
+node::SetCppgcReference+16599
+ 2: 00007FF7751A4878 v8::base::CPU::num_virtu
+al_address_bits+103288
+ 3: 00007FF775D163B1 v8::Isolate::ReportExter
+nalAllocationLimitReached+65
+ 4: 00007FF775D02F36 
+v8::Function::Experimental_IsNopFunction+3302
+ 5: 00007FF775B5F870 v8::internal::StrongRoot
+AllocatorBase::StrongRootAllocatorBase+33904
+ 6: 00007FF775B58CBA v8::internal::StrongRoot
+AllocatorBase::StrongRootAllocatorBase+6330
+ 7: 00007FF775B544F5 v8::internal::ThreadIsol
+ation::JitPageReference::Size+190613
+ 8: 00007FF7754DDE2D BIO_ssl_shutdown+189
