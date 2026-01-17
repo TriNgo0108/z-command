@@ -4,7 +4,7 @@
 [![npm downloads](https://img.shields.io/npm/dm/@zimezone/z-command.svg)](https://www.npmjs.com/package/@zimezone/z-command)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Install curated GitHub Copilot skills and agents for your project.
+Install curated AI coding assistant skills and agents for your project. Supports **GitHub Copilot**, **Claude Code**, **Antigravity**, and **Cursor**.
 
 ## Installation
 
@@ -12,15 +12,24 @@ Install curated GitHub Copilot skills and agents for your project.
 npm install -g @zimezone/z-command
 ```
 
+## Supported Platforms
+
+| Platform       | Directory  | Agents            | Skills |
+| -------------- | ---------- | ----------------- | ------ |
+| GitHub Copilot | `.github/` | ✅                | ✅     |
+| Claude Code    | `.claude/` | ✅                | ✅     |
+| Antigravity    | `.agent/`  | ✅ (as workflows) | ✅     |
+| Cursor         | `.cursor/` | ✅ (as rules)     | ❌     |
+
 ## Usage
 
 ### Initialize skills and agents
 
 ```bash
-# Install all skills and agents to current project
+# Install for all platforms (default)
 z-command init
 
-# Install to global user directory (~/.copilot/)
+# Install to global user directory
 z-command init --global
 
 # Install only skills
@@ -28,6 +37,15 @@ z-command init --skills
 
 # Install only agents
 z-command init --agents
+
+# Install for specific platform
+z-command init --target copilot
+z-command init --target claude
+z-command init --target antigravity
+z-command init --target cursor
+
+# Install for all platforms explicitly
+z-command init --target all
 ```
 
 ### List available templates
@@ -42,13 +60,14 @@ z-command list --agents
 
 ### Skills
 
-| Skill                     | Description                          |
-| ------------------------- | ------------------------------------ |
-| `test-driven-development` | RED-GREEN-REFACTOR cycle             |
-| `systematic-debugging`    | 4-phase root cause process           |
-| `code-review`             | Automated code review checklist      |
-| `security-review`         | OWASP Top 10 vulnerability detection |
-| `writing-plans`           | Detailed implementation plans        |
+| Skill                     | Description                                   |
+| ------------------------- | --------------------------------------------- |
+| `test-driven-development` | RED-GREEN-REFACTOR cycle                      |
+| `systematic-debugging`    | 4-phase root cause process                    |
+| `code-review`             | Automated code review checklist               |
+| `security-review`         | OWASP Top 10 vulnerability detection          |
+| `writing-plans`           | Detailed implementation plans                 |
+| `ui-ux-pro-max`           | AI design intelligence for professional UI/UX |
 
 ### Agents (80 total)
 
@@ -165,6 +184,8 @@ z-command list --agents
 
 After running `z-command init`, your project will have:
 
+### GitHub Copilot
+
 ```
 .github/
 ├── skills/
@@ -179,41 +200,32 @@ After running `z-command init`, your project will have:
     └── ...
 ```
 
-## Development
+### Claude Code
 
-### Local Setup
-
-```bash
-# Install dependencies
-npm install
-
-# Build the project
-npm run build
-
-# Link locally for testing
-npm link
+```
+.claude/
+├── skills/
+│   └── .../SKILL.md
+└── agents/
+    └── *.agent.md
 ```
 
-### Running Tests
+### Antigravity
 
-```bash
-# Run all tests
-npm test
-
-# Run tests with coverage report
-npm run test:coverage
+```
+.agent/
+├── skills/
+│   └── .../SKILL.md
+└── workflows/
+    └── *.md
 ```
 
-### Local Development
+### Cursor
 
-```bash
-# Run directly without building
-npm run dev init
-npm run dev list
-
-# Or after npm link
-z-command init
-z-command list
+```
+.cursor/
+└── rules/
+    └── *.md
 ```
 
 ## Sources
@@ -223,6 +235,7 @@ This project aggregates best practices from:
 - [obra/superpowers](https://github.com/obra/superpowers)
 - [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents)
 - [OneRedOak/claude-code-workflows](https://github.com/OneRedOak/claude-code-workflows)
+- [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) - UI/UX design intelligence
 
 ## License
 

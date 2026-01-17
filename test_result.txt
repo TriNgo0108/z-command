@@ -1,0 +1,74 @@
+﻿
+> @zimezone/z-command@1.1.0 test
+> node --max-old-space-size=8192 node_modules/jest/bin/jest.js
+
+node.exe : PASS src/__tests__/list.test.ts
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" 
+"C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified:  
+   (PASS src/__tests__/list.test.ts:String)  
+   [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandE 
+   rror
+ 
+  listCommand
+    when templates exist
+      ΓêÜ should list both skills and agents 
+by default (5 ms)
+      ΓêÜ should list only skills when 
+--skills flag is set (1 ms)
+      ΓêÜ should list only agents when 
+--agents flag is set
+    when templates do not exist
+      ΓêÜ should show warning when no skills 
+found (1 ms)
+      ΓêÜ should show warning when no agents 
+found (1 ms)
+    description extraction
+      ΓêÜ should extract description from 
+YAML frontmatter (1 ms)
+      ΓêÜ should show "No description" when 
+not found
+
+
+<--- Last few GCs --->
+
+[4856:00000116DB251000]   112663 ms: 
+Mark-Compact 7773.4 (8236.3) -> 7757.1 
+(8233.4) MB, pooled: 12 MB, 225.40 / 0.00 ms 
+ (average mu = 0.096, current mu = 0.046) 
+allocation failure; scavenge might not 
+succeed
+[4856:00000116DB251000]   112903 ms: 
+Mark-Compact 7772.3 (8237.0) -> 7759.8 
+(8234.1) MB, pooled: 13 MB, 229.50 / 0.00 ms 
+ (average mu = 0.069, current mu = 0.043) 
+allocation failure; scavenge might not 
+succeed
+
+
+<--- JS stacktrace --->
+
+FATAL ERROR: Ineffective mark-compacts near 
+heap limit Allocation failed - JavaScript 
+heap out of memory
+----- Native stack trace -----
+
+ 1: 00007FF775241427 
+node::SetCppgcReference+16599
+ 2: 00007FF7751A4878 v8::base::CPU::num_virtu
+al_address_bits+103288
+ 3: 00007FF775D163B1 v8::Isolate::ReportExter
+nalAllocationLimitReached+65
+ 4: 00007FF775D02F36 
+v8::Function::Experimental_IsNopFunction+3302
+ 5: 00007FF775B5F870 v8::internal::StrongRoot
+AllocatorBase::StrongRootAllocatorBase+33904
+ 6: 00007FF775B58CBA v8::internal::StrongRoot
+AllocatorBase::StrongRootAllocatorBase+6330
+ 7: 00007FF775B544F5 v8::internal::ThreadIsol
+ation::JitPageReference::Size+190613
+ 8: 00007FF7754DDE2D BIO_ssl_shutdown+189
