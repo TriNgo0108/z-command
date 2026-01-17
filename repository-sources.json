@@ -1,0 +1,32 @@
+{
+  "sources": {
+    "superpowers": {
+      "type": "agent",
+      "localPath": "templates/agents/superpowers",
+      "repository": "obra/superpowers",
+      "branch": "main",
+      "lastCommit": ""
+    },
+    "awesome-claude-code-subagents": {
+      "type": "agent",
+      "localPath": "templates/agents/awesome-claude",
+      "repository": "VoltAgent/awesome-claude-code-subagents",
+      "branch": "main",
+      "lastCommit": ""
+    },
+    "claude-code-workflows": {
+      "type": "workflow",
+      "localPath": "templates/workflows/claude-workflows",
+      "repository": "OneRedOak/claude-code-workflows",
+      "branch": "main",
+      "lastCommit": ""
+    },
+    "ui-ux-pro-max-skill": {
+      "type": "skill",
+      "localPath": "templates/skills/ui-ux-pro-max",
+      "repository": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "branch": "main",
+      "lastCommit": ""
+    }
+  }
+}
