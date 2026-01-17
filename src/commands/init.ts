@@ -2,21 +2,50 @@ import path from 'path';
 import fs from 'fs-extra';
 import chalk from 'chalk';
 import os from 'os';
+import AdmZip from 'adm-zip';
+import crypto from 'crypto';
 import { InitOptions, PlatformConfig, InstallResult } from '../types';
 import { getTargetPlatforms } from '../platforms';
 
-const TEMPLATES_DIR = path.join(__dirname, '..', '..', 'templates');
+async function ensureTemplates(): Promise<string> {
+  // 1. Check for local templates (dev mode)
+  const localTemplates = path.join(__dirname, '..', '..', 'templates');
+  if (await fs.pathExists(localTemplates)) {
+    return localTemplates;
+  }
+
+  // 2. Check for zipped templates (prod mode)
+  const zipPath = path.join(__dirname, '..', '..', 'templates.zip');
+  if (await fs.pathExists(zipPath)) {
+    // Generate hash of zip file to determine if we need to re-extract
+    const fileBuffer = await fs.readFile(zipPath);
+    const hash = crypto.createHash('md5').update(fileBuffer).digest('hex');
+    const tempDir = path.join(os.tmpdir(), 'z-command-templates', hash);
+    const templatesDir = path.join(tempDir, 'templates');
+
+    if (!await fs.pathExists(templatesDir)) {
+      console.log(chalk.dim('📦 Extracting templates...'));
+      const zip = new AdmZip(zipPath);
+      zip.extractAllTo(tempDir, true);
+    }
+    
+    return templatesDir;
+  }
+
+  throw new Error('Templates not found! Please reinstall the package.');
+}
 
 export async function initCommand(options: InitOptions): Promise<void> {
   console.log(chalk.cyan('\n🚀 Z-Command - Installing AI Coding Assistant Skills & Agents\n'));
 
   const platforms = getTargetPlatforms(options.target);
+  const templatesDir = await ensureTemplates();
   const results: InstallResult[] = [];
 
   for (const platform of platforms) {
     console.log(chalk.blue(`\n📦 Installing for ${platform.displayName}...`));
 
-    const result = await installForPlatform(platform, options);
+    const result = await installForPlatform(platform, options, templatesDir);
     results.push(result);
 
     console.log(chalk.dim(`   Location: ${result.location}`));
@@ -37,7 +66,8 @@ export async function initCommand(options: InitOptions): Promise<void> {
 
 async function installForPlatform(
   platform: PlatformConfig,
-  options: InitOptions
+  options: InitOptions,
+  templatesDir: string
 ): Promise<InstallResult> {
   const targetBase = options.global
     ? path.join(os.homedir(), platform.globalDir)
@@ -51,12 +81,12 @@ async function installForPlatform(
 
   // Install skills (if platform supports them)
   if (installSkills && platform.skillsDir) {
-    skillsCount = await copySkills(targetBase, platform, options.category);
+    skillsCount = await copySkills(targetBase, platform, templatesDir, options.category);
   }
 
   // Install agents
   if (installAgents) {
-    agentsCount = await copyAgents(targetBase, platform, options.category);
+    agentsCount = await copyAgents(targetBase, platform, templatesDir, options.category);
   }
 
   return {
@@ -70,9 +100,10 @@ async function installForPlatform(
 async function copySkills(
   targetBase: string,
   platform: PlatformConfig,
+  templatesDir: string,
   category?: string
 ): Promise<number> {
-  const skillsSource = path.join(TEMPLATES_DIR, 'skills');
+  const skillsSource = path.join(templatesDir, 'skills');
   const skillsTarget = path.join(targetBase, platform.skillsDir!);
 
   if (!await fs.pathExists(skillsSource)) {
@@ -166,9 +197,10 @@ async function copySkillDirectory(
 async function copyAgents(
   targetBase: string,
   platform: PlatformConfig,
+  templatesDir: string,
   category?: string
 ): Promise<number> {
-  const agentsSource = path.join(TEMPLATES_DIR, 'agents');
+  const agentsSource = path.join(templatesDir, 'agents');
   const agentsTarget = path.join(targetBase, platform.agentsDir);
 
   if (!await fs.pathExists(agentsSource)) {
