@@ -10,6 +10,59 @@ const TEMPLATES_DIR = path.join(__dirname, '..', 'templates');
 const AGENTS_DIR = path.join(TEMPLATES_DIR, 'agents');
 const SKILLS_DIR = path.join(TEMPLATES_DIR, 'skills');
 
+const EXCLUSION_PATTERNS = [
+  'web3',
+  'startup',
+  'istio',
+  'market',
+  'k8s',
+  'kubernetes',
+  'linkerd',
+  'airflow',
+  'attack-tree',
+  'gdpr',
+  'game',
+  'hybrid-cloud',
+  'gitlab',
+  'gitops',
+  'multi-cloud',
+  'on-call',
+  'solidity',
+  'sol',
+  'unity',
+  'binary-analysis',
+  'billing-automation',
+  'anti-reversing',
+  'team-composition',
+  'screen-reader',
+  'postmortem',
+  'service-mesh-observability',
+  'embedding-strategies',
+  'godot',
+  'hybrid-search',
+  'incident-runbook',
+  'kpi-dashboard',
+  'memory-safety',
+  'mtls',
+  'protocol-reverse',
+  'spark-optimization',
+  'sast',
+  'saga',
+  'stride-analysis',
+  'turborepo',
+  'bazel',
+  'bats',
+  'bash-defensive',
+  'backtesting',
+  'memory-forensics',
+  'ml-pipeline-workflow',
+  'nft-standards'
+];
+
+function isExcluded(name: string): boolean {
+  return EXCLUSION_PATTERNS.some(pattern => name.toLowerCase().includes(pattern.toLowerCase()));
+}
+
 async function main() {
   console.log(chalk.cyan('🔄 Syncing wshobson/agents...'));
 
@@ -49,6 +102,9 @@ async function main() {
       const agents = await fs.readdir(sourceAgentsDir);
       for (const agentFile of agents) {
         if (!agentFile.endsWith('.md')) continue;
+        
+        // Check exclusion
+        if (isExcluded(agentFile) || isExcluded(plugin)) continue;
 
         const sourceFile = path.join(sourceAgentsDir, agentFile);
         
@@ -86,6 +142,9 @@ async function main() {
     if (await fs.pathExists(sourceSkillsDir)) {
       const skills = await fs.readdir(sourceSkillsDir);
       for (const skillDir of skills) {
+        // Check exclusion
+        if (isExcluded(skillDir) || isExcluded(plugin)) continue;
+        
         const sourceSkill = path.join(sourceSkillsDir, skillDir);
         if (!(await fs.stat(sourceSkill)).isDirectory()) continue;
 
