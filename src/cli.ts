@@ -3,6 +3,11 @@
 import { Command } from 'commander';
 import { initCommand } from './commands/init';
 import { listCommand } from './commands/list';
+import { updateCommand } from './commands/update';
+import updateNotifier from 'update-notifier';
+import pkg from '../package.json';
+
+updateNotifier({ pkg }).notify();
 
 const program = new Command();
 
@@ -27,5 +32,10 @@ program
   .option('-s, --skills', 'List skills only')
   .option('-a, --agents', 'List agents only')
   .action(listCommand);
+
+program
+  .command('update')
+  .description('Update z-command to the latest version')
+  .action(updateCommand);
 
 program.parse();
