@@ -16,6 +16,7 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "check-upstream": "ts-node scripts/check-upstream.ts",
+    "sync-wshobson": "ts-node scripts/sync-wshobson.ts",
     "prepublishOnly": "npm run build && npm test"
   },
   "keywords": [

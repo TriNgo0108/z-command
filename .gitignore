@@ -27,3 +27,6 @@ coverage/
 
 # Test output
 test_output.txt
+
+# Temporary files
+temp/
