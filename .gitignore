@@ -25,5 +25,6 @@ coverage/
 .env
 .env.local
 
-# Test output
-test_output.txt
+
+# Temporary files
+temp/
