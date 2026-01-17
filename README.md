@@ -56,6 +56,12 @@ z-command list --skills
 z-command list --agents
 ```
 
+### Update z-command
+
+```bash
+z-command update
+```
+
 ## Included Templates
 
 ### Skills
