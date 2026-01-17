@@ -75,6 +75,15 @@ function transformToCursor(content: string, filename: string): string {
 }
 
 /**
+ * Transform skill content for Antigravity
+ * Replaces references to .claude/skills with .agent/skills (self-contained skills)
+ */
+function transformSkillForAntigravity(content: string): string {
+  // Replace .claude/skills with .agent/skills to match Antigravity structure
+  return content.replace(/\.claude\/skills/g, '.agent/skills');
+}
+
+/**
  * Platform configuration definitions
  */
 export const PLATFORMS: Record<Exclude<Platform, 'all'>, PlatformConfig> = {
@@ -110,9 +119,10 @@ export const PLATFORMS: Record<Exclude<Platform, 'all'>, PlatformConfig> = {
     agentsDir: 'workflows',
     globalAgentsDir: 'global_workflows',
     skillsDir: 'skills',
-    sharedDir: '.shared',
+    sharedDir: null, // Skills are self-contained per Antigravity spec
     agentExtension: '.md',
     transformAgent: transformToAntigravity,
+    transformSkill: transformSkillForAntigravity,
   },
 
   cursor: {
