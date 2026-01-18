@@ -34,6 +34,13 @@
       "repository": "nextlevelbuilder/ui-ux-pro-max-skill",
       "branch": "main",
       "lastCommit": ""
+    },
+    "vercel-agent-skills": {
+      "type": "skill",
+      "localPath": "templates/skills/react-best-practices",
+      "repository": "vercel-labs/agent-skills",
+      "branch": "main",
+      "lastCommit": ""
     }
   }
 }
