@@ -147,9 +147,9 @@ describe('initCommand', () => {
 
       await initCommand({ target: 'antigravity' });
 
-      // Antigravity has sharedDir: null, so fs.copy should NOT be called for shared resources
-      // Skills are self-contained - data/ and scripts/ stay inside the skill directory
-      expect(consoleLogSpy).not.toHaveBeenCalledWith(expect.stringContaining('Shared resources'));
+      // Antigravity has sharedDir configured, so fs.copy SHOULD be called for shared resources
+      // expecting shared resources to be set up
+      expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining('Shared resources'));
       
       // Verify skill was installed
       expect(consoleLogSpy).toHaveBeenCalledWith(expect.stringContaining('Skill: complex-skill'));

@@ -51,6 +51,9 @@ export async function initCommand(options: InitOptions): Promise<void> {
     console.log(chalk.dim(`   Location: ${result.location}`));
   }
 
+  // Configure git excludes
+  await configureGitExcludes();
+
   // Summary
   console.log(chalk.green('\n✅ Installation complete!\n'));
   console.log(chalk.bold('Summary:'));
@@ -62,6 +65,48 @@ export async function initCommand(options: InitOptions): Promise<void> {
   }
 
   console.log();
+}
+
+async function configureGitExcludes(): Promise<void> {
+  try {
+    const gitDir = path.join(process.cwd(), '.git');
+    if (!await fs.pathExists(gitDir)) {
+      return;
+    }
+
+    const infoDir = path.join(gitDir, 'info');
+    await fs.ensureDir(infoDir);
+
+    const excludeFile = path.join(infoDir, 'exclude');
+    let content = '';
+
+    if (await fs.pathExists(excludeFile)) {
+      content = await fs.readFile(excludeFile, 'utf-8');
+    }
+
+    const ignores = ['.shared', '.skills', '.agents'];
+    let added = false;
+
+    // Ensure content ends with newline if not empty
+    if (content && !content.endsWith('\n')) {
+      content += '\n';
+    }
+
+    for (const ignore of ignores) {
+      if (!content.includes(ignore)) {
+        content += `${ignore}\n`;
+        added = true;
+      }
+    }
+
+    if (added) {
+      await fs.writeFile(excludeFile, content, 'utf-8');
+      console.log(chalk.dim('   Updated .git/info/exclude to ignore .shared, .skills, and .agents'));
+    }
+  } catch (error) {
+    // Silently fail if we can't update git exclude
+    // console.error('Failed to update git exclude:', error);
+  }
 }
 
 async function installForPlatform(
@@ -86,10 +131,7 @@ async function installForPlatform(
 
   // Install agents
   if (installAgents) {
-  // Install agents
-  if (installAgents) {
     agentsCount = await copyAgents(targetBase, platform, templatesDir, options.global, options.category);
-  }
   }
 
   return {

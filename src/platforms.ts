@@ -94,7 +94,7 @@ export const PLATFORMS: Record<Exclude<Platform, 'all'>, PlatformConfig> = {
     globalDir: '.copilot',
     agentsDir: 'agents',
     skillsDir: 'skills',
-    sharedDir: null,
+    sharedDir: ".shared",
     agentExtension: '.agent.md',
     // No transformation needed - this is the source format
   },
@@ -106,7 +106,7 @@ export const PLATFORMS: Record<Exclude<Platform, 'all'>, PlatformConfig> = {
     globalDir: '.claude',
     agentsDir: 'agents',
     skillsDir: 'skills',
-    sharedDir: null,
+    sharedDir: ".shared",
     agentExtension: '.agent.md',
     // Claude Code uses nearly identical format to Copilot
   },
@@ -119,7 +119,7 @@ export const PLATFORMS: Record<Exclude<Platform, 'all'>, PlatformConfig> = {
     agentsDir: 'workflows',
     globalAgentsDir: 'global_workflows',
     skillsDir: 'skills',
-    sharedDir: null, // Skills are self-contained per Antigravity spec
+    sharedDir: ".shared", 
     agentExtension: '.md',
     transformAgent: transformToAntigravity,
     transformSkill: transformSkillForAntigravity,
@@ -131,8 +131,8 @@ export const PLATFORMS: Record<Exclude<Platform, 'all'>, PlatformConfig> = {
     projectDir: '.cursor',
     globalDir: '.cursor',
     agentsDir: 'rules',
-    skillsDir: null, // Cursor doesn't have skills concept
-    sharedDir: null,
+    skillsDir: "skills",
+    sharedDir: ".shared",
     agentExtension: '.md',
     transformAgent: transformToCursor,
   },

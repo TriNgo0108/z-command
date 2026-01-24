@@ -14,12 +14,12 @@ npm install -g @zimezone/z-command
 
 ## Supported Platforms
 
-| Platform       | Directory  | Agents            | Skills |
-| -------------- | ---------- | ----------------- | ------ |
-| GitHub Copilot | `.github/` | ✅                | ✅     |
-| Claude Code    | `.claude/` | ✅                | ✅     |
-| Antigravity    | `.agent/`  | ✅ (as workflows) | ✅     |
-| Cursor         | `.cursor/` | ✅ (as rules)     | ❌     |
+| Platform       | Directory  | Agents            | Skills             |
+| -------------- | ---------- | ----------------- | ------------------ |
+| GitHub Copilot | `.github/` | ✅                | ✅                 |
+| Claude Code    | `.claude/` | ✅                | ✅                 |
+| Antigravity    | `.agent/`  | ✅ (as workflows) | ✅                 |
+| Cursor         | `.cursor/` | ✅ (as rules)     | ✅ (nightly build) |
 
 ## Usage
 
@@ -62,7 +62,10 @@ z-command list --agents
 z-command update
 ```
 
-This command will clone the remote repositories, flatten the structure, renamed files to avoid collisions, and skip any agents that you have locally customized or explicitly excluded.
+This command will unzip templates(which include skills and agents), flatten the structure, rename files to avoid collisions, and skip any agents that you have locally customized or explicitly excluded.
+
+> [!NOTE]
+> This command will also update `.git/info/exclude` to ignore `.agents`, `.skills`, and `.shared` directories to keep your repository clean.
 
 ## Included Templates
 
@@ -80,6 +83,7 @@ This command will clone the remote repositories, flatten the structure, renamed 
 | `python-packaging`        | Modern Python packaging (uv, poetry)          |
 | `react-modernization`     | Modernizing React codebases                   |
 | `rust-async-patterns`     | Async Rust implementation patterns            |
+| `web-design-guidelines`   | Web Interface Guidelines compliance reviews   |
 
 ### Agents (150+ total)
 
