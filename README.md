@@ -64,7 +64,6 @@ z-command update
 
 This command will unzip templates(which include skills and agents), flatten the structure, rename files to avoid collisions, and skip any agents that you have locally customized or explicitly excluded.
 
-> [!NOTE]
 > This command will also update `.git/info/exclude` to ignore `.agents`, `.skills`, and `.shared` directories to keep your repository clean.
 
 ## Included Templates
