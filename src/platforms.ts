@@ -84,6 +84,19 @@ function transformSkillForAntigravity(content: string): string {
 }
 
 /**
+ * Transform skill content for Cursor
+ * Cursor skills use .cursor/skills/ directory with SKILL.md files
+ * Format: YAML frontmatter with name/description + markdown instructions
+ * See: https://cursor.com/docs/context/skills
+ */
+function transformSkillForCursor(content: string): string {
+  // Replace .claude/skills and .agent/skills with .cursor/skills to match Cursor structure
+  let transformed = content.replace(/\.claude\/skills/g, '.cursor/skills');
+  transformed = transformed.replace(/\.agent\/skills/g, '.cursor/skills');
+  return transformed;
+}
+
+/**
  * Platform configuration definitions
  */
 export const PLATFORMS: Record<Exclude<Platform, 'all'>, PlatformConfig> = {
@@ -135,6 +148,7 @@ export const PLATFORMS: Record<Exclude<Platform, 'all'>, PlatformConfig> = {
     sharedDir: ".shared",
     agentExtension: '.md',
     transformAgent: transformToCursor,
+    transformSkill: transformSkillForCursor,
   },
 };
 
