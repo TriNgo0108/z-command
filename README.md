@@ -48,14 +48,6 @@ z-command init --target cursor
 z-command init --target all
 ```
 
-### List available templates
-
-```bash
-z-command list
-z-command list --skills
-z-command list --agents
-```
-
 ### Update z-command
 
 ```bash
@@ -257,7 +249,7 @@ This project aggregates best practices from:
 - [OneRedOak/claude-code-workflows](https://github.com/OneRedOak/claude-code-workflows)
 - [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) - UI/UX design intelligence
 - [wshobson/agents](https://github.com/wshobson/agents) - 100+ specialized agents and skills
-
+- [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)
 ## License
 
 MIT
