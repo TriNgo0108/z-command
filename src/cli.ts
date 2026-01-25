@@ -4,6 +4,7 @@ import { Command } from 'commander';
 import { initCommand } from './commands/init';
 import { listCommand } from './commands/list';
 import { updateCommand } from './commands/update';
+import { bumpCommand } from './commands/bump';
 import updateNotifier from 'update-notifier';
 import pkg from '../package.json';
 
@@ -14,7 +15,7 @@ const program = new Command();
 program
   .name('z-command')
   .description('Install curated AI coding assistant skills and agents for your project')
-  .version('1.1.3');
+  .version('1.2.2');
 
 program
   .command('init')
@@ -37,5 +38,12 @@ program
   .command('update')
   .description('Update z-command to the latest version')
   .action(updateCommand);
+
+program
+  .command('bump')
+  .description('Bump package version (patch, minor, or major)')
+  .option('-t, --type <type>', 'Bump type: patch, minor, major (default: patch)')
+  .option('-d, --dry-run', 'Show what would be changed without making changes')
+  .action(bumpCommand);
 
 program.parse();
