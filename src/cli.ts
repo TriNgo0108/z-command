@@ -14,7 +14,7 @@ const program = new Command();
 program
   .name('z-command')
   .description('Install curated AI coding assistant skills and agents for your project')
-  .version('1.2.3');
+  .version('1.2.4');
 
 program
   .command('init')
