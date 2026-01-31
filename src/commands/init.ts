@@ -84,7 +84,7 @@ async function configureGitExcludes(): Promise<void> {
       content = await fs.readFile(excludeFile, 'utf-8');
     }
 
-    const ignores = ['.shared', '.skills', '.agents', '.agent', ".claude", ".cursor", "agents", "skills"];
+    const ignores = ['.shared', '.skills', '.agents', '.agent', ".claude", ".cursor", "skills"];
     let added = false;
 
     // Ensure content ends with newline if not empty
@@ -93,7 +93,9 @@ async function configureGitExcludes(): Promise<void> {
     }
 
     for (const ignore of ignores) {
-      if (!content.includes(ignore)) {
+      const escapedIgnore = ignore.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const pattern = new RegExp(`^${escapedIgnore}$`, 'm');
+      if (!pattern.test(content)) {
         content += `${ignore}\n`;
         added = true;
       }
