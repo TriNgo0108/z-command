@@ -1,6 +1,6 @@
 {
   "name": "@zimezone/z-command",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Install curated AI coding assistant skills and agents for GitHub Copilot, Claude Code, Antigravity, and Cursor",
   "main": "dist/cli.js",
   "bin": {
