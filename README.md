@@ -76,6 +76,13 @@ This command will unzip templates(which include skills and agents), flatten the 
 | `rust-async-patterns`     | Async Rust implementation patterns            |
 | `web-design-guidelines`   | Web Interface Guidelines compliance reviews   |
 
+### Organized Skill Hierarchies (v2.0+ Features)
+
+The 100+ included skills are interlinked to provide deep contextual awareness and guidance to your AI agent:
+
+- **Domain Hubs**: Broad "Exposure" skills (such as `_frontend-mastery`, `_backend-mastery`, and `_data-ai-mastery`) act as central indexes mapping to highly specialized sub-skills. This allows the agent to navigate from a high-level task down to specific, appropriate tools.
+- **Phase-Based Workflows**: Sequential lifecycle skills (such as `_workflow-feature-lifecycle` and `_workflow-data-pipeline`) act as step-by-step guides. They walk the agent through the proper Software Development Lifecycle phases (Planning -> Design -> Scaffolding -> Implementation -> Review -> Testing -> Deployment).
+
 ### Agents (150+ total)
 
 **01. Core Development**
@@ -250,6 +257,7 @@ This project aggregates best practices from:
 - [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) - UI/UX design intelligence
 - [wshobson/agents](https://github.com/wshobson/agents) - 100+ specialized agents and skills
 - [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)
+
 ## License
 
 MIT
