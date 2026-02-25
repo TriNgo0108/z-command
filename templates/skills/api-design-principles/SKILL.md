@@ -526,3 +526,13 @@ def create_context():
 - **assets/graphql-schema-template.graphql**: Complete GraphQL schema example
 - **assets/api-design-checklist.md**: Pre-implementation review checklist
 - **scripts/openapi-generator.py**: Generate OpenAPI specs from code
+
+
+## Parent Hub
+- [_backend-mastery](../_backend-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)
+- [_workflow-data-pipeline](../_workflow-data-pipeline/SKILL.md)

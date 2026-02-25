@@ -202,3 +202,13 @@ CREATE TABLE profiles (
 );
 CREATE INDEX profiles_attrs_gin ON profiles USING GIN (attrs);
 ```
+
+
+## Parent Hub
+- [_data-ai-mastery](../_data-ai-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)
+- [_workflow-data-pipeline](../_workflow-data-pipeline/SKILL.md)

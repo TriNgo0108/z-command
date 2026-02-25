@@ -1018,3 +1018,7 @@ See `javascript-testing-patterns` skill for comprehensive testing guidance.
 - **Express.js Guide**: https://expressjs.com/en/guide/
 - **Fastify Documentation**: https://www.fastify.io/docs/
 - **TypeScript Node Starter**: https://github.com/microsoft/TypeScript-Node-Starter
+
+
+## Parent Hub
+- [_backend-mastery](../_backend-mastery/SKILL.md)

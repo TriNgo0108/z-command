@@ -427,3 +427,7 @@ const todosSlice = createSlice({
 - [Zustand GitHub](https://github.com/pmndrs/zustand)
 - [Jotai Documentation](https://jotai.org/)
 - [TanStack Query](https://tanstack.com/query)
+
+
+## Parent Hub
+- [_frontend-mastery](../_frontend-mastery/SKILL.md)

@@ -444,3 +444,7 @@ PROCESS:
 | Groupthink         | Conforming to group consensus                   | Assign devil's advocate role           |
 | Overconfidence     | Excessive certainty in predictions              | Calibrate with probability ranges      |
 | Analysis Paralysis | Over-analyzing instead of deciding              | Set decision deadlines, bias to action |
+
+
+## Parent Hub
+- [_process-architecture-mastery](../_process-architecture-mastery/SKILL.md)

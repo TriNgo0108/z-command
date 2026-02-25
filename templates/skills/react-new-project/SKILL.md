@@ -78,3 +78,12 @@ Run the dev server to ensure it starts:
 ```bash
 npm run dev
 ```
+
+
+## Parent Hub
+- [_frontend-mastery](../_frontend-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

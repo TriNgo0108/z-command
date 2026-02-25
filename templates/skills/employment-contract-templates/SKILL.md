@@ -505,3 +505,7 @@ Date: _________________________
 - [Department of Labor](https://www.dol.gov/)
 - [EEOC Guidance](https://www.eeoc.gov/)
 - State-specific labor departments
+
+
+## Parent Hub
+- [_business-finance-mastery](../_business-finance-mastery/SKILL.md)

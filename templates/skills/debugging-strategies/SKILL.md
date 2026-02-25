@@ -525,3 +525,7 @@ afterEach(() => {
 - **assets/debugging-checklist.md**: Quick reference checklist
 - **assets/common-bugs.md**: Common bug patterns
 - **scripts/debug-helper.ts**: Debugging utility functions
+
+
+## Parent Hub
+- [_process-architecture-mastery](../_process-architecture-mastery/SKILL.md)

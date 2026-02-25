@@ -556,3 +556,7 @@ class WeaviateVectorStore:
 - [Qdrant Docs](https://qdrant.tech/documentation/)
 - [pgvector](https://github.com/pgvector/pgvector)
 - [Weaviate Docs](https://weaviate.io/developers/weaviate)
+
+
+## Parent Hub
+- [_data-ai-mastery](../_data-ai-mastery/SKILL.md)

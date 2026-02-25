@@ -323,7 +323,6 @@ rules:
 - `references/slo-definitions.md` - SLO definition patterns
 - `references/error-budget.md` - Error budget calculations
 
-## Related Skills
 
-- `prometheus-configuration` - For metric collection
-- `grafana-dashboards` - For SLO visualization
+## Parent Hub
+- [_devops-cloud-mastery](../_devops-cloud-mastery/SKILL.md)

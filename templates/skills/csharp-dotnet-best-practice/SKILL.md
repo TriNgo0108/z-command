@@ -854,3 +854,7 @@ public static partial class Validators
 8. Use service locator pattern
 9. Mix sync and async code unnecessarily
 10. Skip validation at API boundaries
+
+
+## Parent Hub
+- [_backend-mastery](../_backend-mastery/SKILL.md)

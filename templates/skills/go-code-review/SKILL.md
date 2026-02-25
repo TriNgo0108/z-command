@@ -659,3 +659,12 @@ type Service struct{}  // user.Service
 6. **Early Returns** - Keep happy path at minimal indent
 7. **Run Race Detector** - `go test -race`
 8. **Document Why** - Not what (code shows what)
+
+
+## Parent Hub
+- [_backend-mastery](../_backend-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

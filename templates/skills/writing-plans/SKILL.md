@@ -62,3 +62,12 @@ Numbered, atomic steps:
 - Identify risks and mitigations
 - Estimate effort for each step
 - Mark dependencies between steps
+
+
+## Parent Hub
+- [_process-architecture-mastery](../_process-architecture-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

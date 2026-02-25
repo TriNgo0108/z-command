@@ -733,3 +733,12 @@ function useLatest<T>(value: T) {
 - [node-lru-cache](https://github.com/isaacs/node-lru-cache)
 - [How We Optimized Package Imports in Next.js](https://vercel.com/blog/how-we-optimized-package-imports-in-next-js)
 - [How We Made the Vercel Dashboard Twice as Fast](https://vercel.com/blog/how-we-made-the-vercel-dashboard-twice-as-fast)
+
+
+## Parent Hub
+- [_frontend-mastery](../_frontend-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

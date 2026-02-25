@@ -829,3 +829,12 @@ uv --version                # Show version
 8. **Use workspaces** - For monorepo projects
 9. **Export for compatibility** - Generate requirements.txt when needed
 10. **Read the docs** - uv is feature-rich and evolving
+
+
+## Parent Hub
+- [_data-ai-mastery](../_data-ai-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

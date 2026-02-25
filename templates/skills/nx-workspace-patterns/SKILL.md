@@ -450,3 +450,7 @@ nx migrate --run-migrations
 - [Nx Documentation](https://nx.dev/getting-started/intro)
 - [Module Boundaries](https://nx.dev/core-features/enforce-module-boundaries)
 - [Nx Cloud](https://nx.app/)
+
+
+## Parent Hub
+- [_devops-cloud-mastery](../_devops-cloud-mastery/SKILL.md)

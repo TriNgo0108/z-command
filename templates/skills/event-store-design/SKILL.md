@@ -435,3 +435,7 @@ Capacity: On-demand or provisioned based on throughput needs
 - [EventStoreDB](https://www.eventstore.com/)
 - [Marten Events](https://martendb.io/events/)
 - [Event Sourcing Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/event-sourcing)
+
+
+## Parent Hub
+- [_backend-mastery](../_backend-mastery/SKILL.md)

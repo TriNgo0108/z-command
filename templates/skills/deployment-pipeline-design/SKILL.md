@@ -352,8 +352,11 @@ kubectl rollout undo deployment/my-app --to-revision=3
 - `references/pipeline-orchestration.md` - Complex pipeline patterns
 - `assets/approval-gate-template.yml` - Approval workflow templates
 
-## Related Skills
 
-- `github-actions-templates` - For GitHub Actions implementation
-- `gitlab-ci-patterns` - For GitLab CI implementation
-- `secrets-management` - For secrets handling
+## Parent Hub
+- [_devops-cloud-mastery](../_devops-cloud-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

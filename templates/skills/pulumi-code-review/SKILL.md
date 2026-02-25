@@ -550,3 +550,7 @@ class TestInfrastructure(unittest.TestCase):
 6. **Tag Everything** - For cost tracking and management
 7. **Export Outputs** - For cross-stack references
 8. **Test Infrastructure** - Unit tests with mocks
+
+
+## Parent Hub
+- [_devops-cloud-mastery](../_devops-cloud-mastery/SKILL.md)

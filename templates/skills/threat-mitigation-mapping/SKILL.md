@@ -743,3 +743,13 @@ class ControlTester:
 - [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)
 - [CIS Controls](https://www.cisecurity.org/controls)
 - [MITRE D3FEND](https://d3fend.mitre.org/)
+
+
+## Parent Hub
+- [_security-compliance-mastery](../_security-compliance-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)
+- [_workflow-security-audit](../_workflow-security-audit/SKILL.md)

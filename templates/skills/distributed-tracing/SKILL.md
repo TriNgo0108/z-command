@@ -431,8 +431,6 @@ def process_request():
 - `references/instrumentation.md` - Instrumentation patterns
 - `assets/jaeger-config.yaml.template` - Jaeger configuration
 
-## Related Skills
 
-- `prometheus-configuration` - For metrics
-- `grafana-dashboards` - For visualization
-- `slo-implementation` - For latency SLOs
+## Parent Hub
+- [_devops-cloud-mastery](../_devops-cloud-mastery/SKILL.md)

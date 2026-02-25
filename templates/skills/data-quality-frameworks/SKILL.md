@@ -585,3 +585,12 @@ if not all(r.passed for r in results.values()):
 - [dbt Testing Documentation](https://docs.getdbt.com/docs/build/tests)
 - [Data Contract Specification](https://datacontract.com/)
 - [Soda Core](https://docs.soda.io/soda-core/overview.html)
+
+
+## Parent Hub
+- [_data-ai-mastery](../_data-ai-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-data-pipeline](../_workflow-data-pipeline/SKILL.md)

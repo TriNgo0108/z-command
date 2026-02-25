@@ -692,3 +692,12 @@ async def test_with_timeout():
 8. **Use semaphores** for rate limiting
 9. **Handle task cancellation** properly
 10. **Test async code** with pytest-asyncio
+
+
+## Parent Hub
+- [_data-ai-mastery](../_data-ai-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-data-pipeline](../_workflow-data-pipeline/SKILL.md)

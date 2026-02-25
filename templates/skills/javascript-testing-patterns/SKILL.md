@@ -1023,3 +1023,12 @@ it('should call function after delay', () => {
 - **Vitest Documentation**: https://vitest.dev/
 - **Testing Library**: https://testing-library.com/
 - **Kent C. Dodds Testing Blog**: https://kentcdodds.com/blog/
+
+
+## Parent Hub
+- [_testing-qa-mastery](../_testing-qa-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

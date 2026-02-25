@@ -653,3 +653,12 @@ HYBRID CONNECTIVITY:
 - Set up Budgets and alerts
 - Review Cost Explorer weekly
 - Use Reserved/Savings Plans for steady workloads
+
+
+## Parent Hub
+- [_devops-cloud-mastery](../_devops-cloud-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

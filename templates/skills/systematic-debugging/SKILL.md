@@ -55,3 +55,7 @@ A structured approach to finding and fixing bugs.
 - Avoid arbitrary sleep/delays
 - Wait for specific conditions
 - Use timeouts with clear error messages
+
+
+## Parent Hub
+- [_process-architecture-mastery](../_process-architecture-mastery/SKILL.md)

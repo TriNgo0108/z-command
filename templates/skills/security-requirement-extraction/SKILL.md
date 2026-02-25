@@ -675,3 +675,12 @@ This epic covers all security requirements related to {domain.value.replace('_',
 - [OWASP ASVS](https://owasp.org/www-project-application-security-verification-standard/)
 - [NIST SP 800-53](https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final)
 - [Security User Stories](https://www.oreilly.com/library/view/agile-application-security/9781491938836/)
+
+
+## Parent Hub
+- [_security-compliance-mastery](../_security-compliance-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-security-audit](../_workflow-security-audit/SKILL.md)

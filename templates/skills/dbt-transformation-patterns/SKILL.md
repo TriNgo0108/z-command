@@ -559,3 +559,12 @@ dbt ls --select tag:critical     # List models by tag
 - [dbt Best Practices](https://docs.getdbt.com/guides/best-practices)
 - [dbt-utils Package](https://hub.getdbt.com/dbt-labs/dbt_utils/latest/)
 - [dbt Discourse](https://discourse.getdbt.com/)
+
+
+## Parent Hub
+- [_data-ai-mastery](../_data-ai-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-data-pipeline](../_workflow-data-pipeline/SKILL.md)

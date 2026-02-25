@@ -1027,3 +1027,7 @@ STOCKS_ALLOCATION = lambda age: 100 - age  # or 110 - age (aggressive)
 - [NerdWallet Financial Calculators](https://www.nerdwallet.com/calculators)
 - [Mr. Money Mustache - Financial Independence](https://www.mrmoneymustache.com/)
 - [The Simple Path to Wealth (JL Collins)](https://jlcollinsnh.com/)
+
+
+## Parent Hub
+- [_business-finance-mastery](../_business-finance-mastery/SKILL.md)

@@ -401,3 +401,7 @@ def evaluate_rag_system(qa_chain, test_cases):
 - **Missing Information**: Ensure documents are properly indexed
 - **Slow Queries**: Optimize vector store, use caching, reduce k
 - **Hallucinations**: Improve grounding prompt, add verification step
+
+
+## Parent Hub
+- [_data-ai-mastery](../_data-ai-mastery/SKILL.md)

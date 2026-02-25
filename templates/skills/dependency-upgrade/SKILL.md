@@ -407,3 +407,7 @@ Post-Upgrade:
 - Not reading breaking change notes
 - Skipping major versions
 - Not having rollback plan
+
+
+## Parent Hub
+- [_process-architecture-mastery](../_process-architecture-mastery/SKILL.md)

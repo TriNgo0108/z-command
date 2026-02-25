@@ -339,8 +339,11 @@ secret-scan:
 - `references/vault-setup.md` - HashiCorp Vault configuration
 - `references/github-secrets.md` - GitHub Secrets best practices
 
-## Related Skills
 
-- `github-actions-templates` - For GitHub Actions integration
-- `gitlab-ci-patterns` - For GitLab CI integration
-- `deployment-pipeline-design` - For pipeline architecture
+## Parent Hub
+- [_security-compliance-mastery](../_security-compliance-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-security-audit](../_workflow-security-audit/SKILL.md)

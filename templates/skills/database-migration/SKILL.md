@@ -422,3 +422,12 @@ module.exports = {
 - Not considering index performance
 - Ignoring foreign key constraints
 - Migrating too much data at once
+
+
+## Parent Hub
+- [_data-ai-mastery](../_data-ai-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

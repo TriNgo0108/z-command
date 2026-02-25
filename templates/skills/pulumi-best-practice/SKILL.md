@@ -1104,3 +1104,12 @@ db = aws.rds.Instance(
 8. Forget to register component outputs
 9. Mix multiple concerns in one component
 10. Ignore state drift (run refresh regularly)
+
+
+## Parent Hub
+- [_devops-cloud-mastery](../_devops-cloud-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

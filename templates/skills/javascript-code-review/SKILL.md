@@ -555,3 +555,12 @@ for (const [key, value] of Object.entries(object)) {
 6. **Clean up resources** - Event listeners, timers, subscriptions
 7. **Don't mutate** - Copy before `sort()`, `reverse()`, etc.
 8. **Use modern methods** - `Object.entries`, `Array.from`, etc.
+
+
+## Parent Hub
+- [_frontend-mastery](../_frontend-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

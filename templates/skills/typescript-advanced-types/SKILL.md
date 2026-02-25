@@ -715,3 +715,7 @@ type ShouldError = ExpectError<AssertEqual<string, number>>;
 - **Type Challenges**: https://github.com/type-challenges/type-challenges
 - **TypeScript Deep Dive**: https://basarat.gitbook.io/typescript/
 - **Effective TypeScript**: Book by Dan Vanderkam
+
+
+## Parent Hub
+- [_frontend-mastery](../_frontend-mastery/SKILL.md)

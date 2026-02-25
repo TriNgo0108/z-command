@@ -545,3 +545,12 @@ await page.pause();  // Pauses execution, opens inspector
 - **assets/e2e-testing-checklist.md**: What to test with E2E
 - **assets/selector-strategies.md**: Finding reliable selectors
 - **scripts/test-analyzer.ts**: Analyze test flakiness and duration
+
+
+## Parent Hub
+- [_testing-qa-mastery](../_testing-qa-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

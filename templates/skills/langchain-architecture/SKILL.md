@@ -336,3 +336,7 @@ llm = OpenAI(streaming=True, callbacks=[StreamingStdOutCallbackHandler()])
 - [ ] Set up observability (callbacks)
 - [ ] Implement fallback strategies
 - [ ] Version control prompts and configurations
+
+
+## Parent Hub
+- [_data-ai-mastery](../_data-ai-mastery/SKILL.md)

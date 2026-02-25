@@ -868,3 +868,7 @@ recursive-exclude * *.py[co]
 8. **Document thoroughly** with README and docstrings
 9. **Include LICENSE** file
 10. **Automate publishing** with CI/CD
+
+
+## Parent Hub
+- [_data-ai-mastery](../_data-ai-mastery/SKILL.md)

@@ -550,3 +550,7 @@ Reviewed-by: @alice
 - [Semantic Versioning](https://semver.org/)
 - [semantic-release](https://semantic-release.gitbook.io/)
 - [git-cliff](https://git-cliff.org/)
+
+
+## Parent Hub
+- [_process-architecture-mastery](../_process-architecture-mastery/SKILL.md)

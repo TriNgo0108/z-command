@@ -471,3 +471,12 @@ print(merged['_merge'].value_counts())
 6. **Use Built-ins** - `query()`, `isin()`, `groupby()`
 7. **Chunk Large Files** - Don't load everything at once
 8. **Consider Alternatives** - Polars, Dask for huge datasets
+
+
+## Parent Hub
+- [_data-ai-mastery](../_data-ai-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-data-pipeline](../_workflow-data-pipeline/SKILL.md)

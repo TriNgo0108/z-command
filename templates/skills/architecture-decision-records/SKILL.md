@@ -426,3 +426,12 @@ adr link 2 "Complements" 1 "Is complemented by"
 - [MADR Template](https://adr.github.io/madr/)
 - [ADR GitHub Organization](https://adr.github.io/)
 - [adr-tools](https://github.com/npryce/adr-tools)
+
+
+## Parent Hub
+- [_process-architecture-mastery](../_process-architecture-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

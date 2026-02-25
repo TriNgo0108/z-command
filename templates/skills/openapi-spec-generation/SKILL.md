@@ -1026,3 +1026,12 @@ openapi-generator-cli generate \
 - [Swagger Editor](https://editor.swagger.io/)
 - [Redocly](https://redocly.com/)
 - [Spectral](https://stoplight.io/open-source/spectral)
+
+
+## Parent Hub
+- [_backend-mastery](../_backend-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

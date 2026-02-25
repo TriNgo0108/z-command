@@ -511,3 +511,7 @@ function List<T>({ items, renderItem }: ListProps<T>) {
 - Mixing class and functional patterns
 - Ignoring StrictMode warnings
 - Breaking change assumptions
+
+
+## Parent Hub
+- [_frontend-mastery](../_frontend-mastery/SKILL.md)

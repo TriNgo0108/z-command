@@ -398,3 +398,7 @@ git branch recovered-branch abc123
 - **assets/git-workflow-checklist.md**: Pre-PR cleanup checklist
 - **assets/git-aliases.md**: Useful Git aliases for advanced workflows
 - **scripts/git-clean-branches.sh**: Clean up merged and stale branches
+
+
+## Parent Hub
+- [_process-architecture-mastery](../_process-architecture-mastery/SKILL.md)

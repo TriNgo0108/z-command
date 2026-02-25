@@ -889,3 +889,12 @@ func secureHandler(next http.Handler) http.Handler {
 8. Spawn goroutines without cleanup plan
 9. Use init() functions for complex logic
 10. Import packages only for side effects without explicit need
+
+
+## Parent Hub
+- [_backend-mastery](../_backend-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

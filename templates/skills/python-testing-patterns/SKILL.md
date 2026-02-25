@@ -905,3 +905,12 @@ exclude_lines = [
 8. **Test edge cases** and error conditions
 9. **Measure coverage** but focus on quality
 10. **Run tests in CI/CD** on every commit
+
+
+## Parent Hub
+- [_data-ai-mastery](../_data-ai-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

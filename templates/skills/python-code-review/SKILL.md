@@ -585,3 +585,12 @@ def query_database(sql: str) -> list:
 6. **Context Managers** - For all resources that need cleanup
 7. **Test Behavior** - Not implementation details
 8. **Validate Input** - Especially from external sources
+
+
+## Parent Hub
+- [_data-ai-mastery](../_data-ai-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

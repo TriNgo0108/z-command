@@ -518,3 +518,12 @@ When author disagrees with your feedback:
 - **assets/pr-review-template.md**: Standard review comment template
 - **assets/review-checklist.md**: Quick reference checklist
 - **scripts/pr-analyzer.py**: Analyze PR complexity and suggest reviewers
+
+
+## Parent Hub
+- [_process-architecture-mastery](../_process-architecture-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-security-audit](../_workflow-security-audit/SKILL.md)

@@ -156,3 +156,12 @@ async def test_activity():
 - Python SDK Testing: docs.temporal.io/develop/python/testing-suite
 - Testing Patterns: github.com/temporalio/temporal/blob/main/docs/development/testing.md
 - Python Samples: github.com/temporalio/samples-python
+
+
+## Parent Hub
+- [_testing-qa-mastery](../_testing-qa-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

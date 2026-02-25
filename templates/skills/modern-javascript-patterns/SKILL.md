@@ -909,3 +909,12 @@ const first = doubled.next().value;  // Only computes first value
 - **You Don't Know JS**: https://github.com/getify/You-Dont-Know-JS
 - **Eloquent JavaScript**: https://eloquentjavascript.net/
 - **ES6 Features**: http://es6-features.org/
+
+
+## Parent Hub
+- [_frontend-mastery](../_frontend-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

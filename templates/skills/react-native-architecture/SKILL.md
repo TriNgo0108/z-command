@@ -669,3 +669,7 @@ eas update --branch production --message "Bug fixes"
 - [Expo Router](https://docs.expo.dev/router/introduction/)
 - [React Native Performance](https://reactnative.dev/docs/performance)
 - [FlashList](https://shopify.github.io/flash-list/)
+
+
+## Parent Hub
+- [_frontend-mastery](../_frontend-mastery/SKILL.md)

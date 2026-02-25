@@ -620,3 +620,7 @@ pnpm changeset publish
 - **assets/monorepo-checklist.md**: Setup checklist
 - **assets/migration-guide.md**: Multi-repo to monorepo migration
 - **scripts/dependency-graph.ts**: Visualize package dependencies
+
+
+## Parent Hub
+- [_devops-cloud-mastery](../_devops-cloud-mastery/SKILL.md)

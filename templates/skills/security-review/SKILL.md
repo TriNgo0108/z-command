@@ -76,3 +76,13 @@ Proactive security review based on OWASP Top 10 and security best practices.
 - **High**: Significant risk, fix soon
 - **Medium**: Should be addressed
 - **Low**: Minor issue, fix when convenient
+
+
+## Parent Hub
+- [_security-compliance-mastery](../_security-compliance-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)
+- [_workflow-security-audit](../_workflow-security-audit/SKILL.md)

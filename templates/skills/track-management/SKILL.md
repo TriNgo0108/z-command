@@ -591,3 +591,7 @@ Phase 3: Cleanup
 8. **Archive, don't delete**: Preserve completed tracks for reference
 9. **Size appropriately**: Keep tracks between 1-5 days of work
 10. **Clear acceptance criteria**: Every requirement must be testable
+
+
+## Parent Hub
+- [_process-architecture-mastery](../_process-architecture-mastery/SKILL.md)

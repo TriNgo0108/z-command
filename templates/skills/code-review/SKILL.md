@@ -60,3 +60,13 @@ Before starting the review:
 - Explain the "why" behind suggestions
 - Differentiate between blocking and non-blocking issues
 - Acknowledge good code
+
+
+## Parent Hub
+- [_process-architecture-mastery](../_process-architecture-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)
+- [_workflow-security-audit](../_workflow-security-audit/SKILL.md)

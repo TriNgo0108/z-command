@@ -522,3 +522,12 @@ print(f"Average: {time/100*1000:.2f} ms")
 6. **Use Built-in Functions** - `np.sum()`, not `sum()`
 7. **Profile Performance** - `%timeit` for bottlenecks
 8. **Consider Memory** - In-place ops, contiguous arrays
+
+
+## Parent Hub
+- [_data-ai-mastery](../_data-ai-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-data-pipeline](../_workflow-data-pipeline/SKILL.md)

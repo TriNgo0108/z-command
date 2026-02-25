@@ -44,3 +44,13 @@ Follow the RED-GREEN-REFACTOR cycle for all development work.
 - One assertion per test when possible
 - Use descriptive test names
 - Mock external dependencies
+
+
+## Parent Hub
+- [_testing-qa-mastery](../_testing-qa-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)
+- [_workflow-data-pipeline](../_workflow-data-pipeline/SKILL.md)

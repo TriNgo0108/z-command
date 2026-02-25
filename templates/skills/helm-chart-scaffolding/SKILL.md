@@ -538,7 +538,6 @@ kubectl get events --sort-by='.lastTimestamp'
 - `scripts/validate-chart.sh` - Validation script
 - `references/chart-structure.md` - Detailed chart organization
 
-## Related Skills
 
-- `k8s-manifest-generator` - For creating base Kubernetes manifests
-- `gitops-workflow` - For automated Helm chart deployments
+## Parent Hub
+- [_devops-cloud-mastery](../_devops-cloud-mastery/SKILL.md)

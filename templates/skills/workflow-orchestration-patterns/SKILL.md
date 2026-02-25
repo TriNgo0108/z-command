@@ -314,3 +314,7 @@ For each step:
 3. Idempotency is critical for activities
 4. State preservation is automatic
 5. Design for failure and recovery
+
+
+## Parent Hub
+- [_process-architecture-mastery](../_process-architecture-mastery/SKILL.md)

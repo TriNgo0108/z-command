@@ -385,8 +385,6 @@ curl 'http://localhost:9090/api/v1/query?query=up'
 - `references/recording-rules.md` - Recording rule examples
 - `scripts/validate-prometheus.sh` - Validation script
 
-## Related Skills
 
-- `grafana-dashboards` - For visualization
-- `slo-implementation` - For SLO monitoring
-- `distributed-tracing` - For request tracing
+## Parent Hub
+- [_devops-cloud-mastery](../_devops-cloud-mastery/SKILL.md)

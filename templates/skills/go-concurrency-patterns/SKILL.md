@@ -653,3 +653,7 @@ go run -race main.go
 - [Go Concurrency Patterns](https://go.dev/blog/pipelines)
 - [Effective Go - Concurrency](https://go.dev/doc/effective_go#concurrency)
 - [Go by Example - Goroutines](https://gobyexample.com/goroutines)
+
+
+## Parent Hub
+- [_backend-mastery](../_backend-mastery/SKILL.md)

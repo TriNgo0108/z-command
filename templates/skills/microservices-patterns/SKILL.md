@@ -593,3 +593,7 @@ async def call_payment_service(payment_data: dict):
 - **Premature Microservices**: Starting with microservices
 - **Ignoring Network Failures**: Assuming reliable network
 - **No Compensation Logic**: Can't undo failed transactions
+
+
+## Parent Hub
+- [_backend-mastery](../_backend-mastery/SKILL.md)

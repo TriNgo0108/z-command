@@ -586,3 +586,7 @@ with open('model_metadata.json', 'w') as f:
 6. **Handle Imbalance** - class_weight or SMOTE
 7. **Evaluate Properly** - Multiple metrics, confusion matrix
 8. **Set random_state** - Reproducibility is essential
+
+
+## Parent Hub
+- [_data-ai-mastery](../_data-ai-mastery/SKILL.md)

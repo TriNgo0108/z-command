@@ -634,3 +634,12 @@ def process_order(order_id: str) -> Order:
 - **assets/error-handling-checklist.md**: Review checklist for error handling
 - **assets/error-message-guide.md**: Writing helpful error messages
 - **scripts/error-analyzer.py**: Analyze error patterns in logs
+
+
+## Parent Hub
+- [_process-architecture-mastery](../_process-architecture-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-security-audit](../_workflow-security-audit/SKILL.md)

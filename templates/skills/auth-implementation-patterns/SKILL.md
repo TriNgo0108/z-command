@@ -632,3 +632,12 @@ app.use('/api/', apiLimiter);
 - **assets/auth-security-checklist.md**: Security review checklist
 - **assets/password-policy-template.md**: Password requirements template
 - **scripts/token-validator.ts**: JWT validation utility
+
+
+## Parent Hub
+- [_security-compliance-mastery](../_security-compliance-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-security-audit](../_workflow-security-audit/SKILL.md)

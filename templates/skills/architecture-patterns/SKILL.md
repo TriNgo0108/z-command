@@ -492,3 +492,7 @@ class OrderRepository:
 - **Repository Leakage**: Exposing ORM objects
 - **Missing Abstractions**: Concrete dependencies in core
 - **Over-Engineering**: Clean architecture for simple CRUD
+
+
+## Parent Hub
+- [_backend-mastery](../_backend-mastery/SKILL.md)

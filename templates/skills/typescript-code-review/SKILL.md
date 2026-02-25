@@ -503,3 +503,12 @@ export type { CreateUserInput, UpdateUserInput } from "./inputs";
 6. **Exhaustive Switches** - Use `never` for completeness
 7. **Generic Functions** - For reusable typed code
 8. **Enable Strict Mode** - `"strict": true` in tsconfig
+
+
+## Parent Hub
+- [_frontend-mastery](../_frontend-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

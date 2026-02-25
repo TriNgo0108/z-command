@@ -708,3 +708,12 @@ function UserMenu() {
 6. **Memoize wisely** - Only expensive computations
 7. **Small components** - Single responsibility
 8. **Context for deep props** - Avoid prop drilling
+
+
+## Parent Hub
+- [_frontend-mastery](../_frontend-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

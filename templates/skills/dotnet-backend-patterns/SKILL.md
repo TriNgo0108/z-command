@@ -813,3 +813,12 @@ public class ProductsApiTests : IClassFixture<WebApplicationFactory<Program>>
 - **assets/repository-template.cs**: Repository pattern implementation
 - **references/ef-core-best-practices.md**: EF Core optimization guide
 - **references/dapper-patterns.md**: Advanced Dapper usage patterns
+
+
+## Parent Hub
+- [_backend-mastery](../_backend-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

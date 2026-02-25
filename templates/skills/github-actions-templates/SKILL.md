@@ -326,8 +326,11 @@ jobs:
 - `assets/matrix-build.yml` - Matrix build template
 - `references/common-workflows.md` - Common workflow patterns
 
-## Related Skills
 
-- `gitlab-ci-patterns` - For GitLab CI workflows
-- `deployment-pipeline-design` - For pipeline architecture
-- `secrets-management` - For secrets handling
+## Parent Hub
+- [_devops-cloud-mastery](../_devops-cloud-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

@@ -477,3 +477,7 @@ To analyze competitive landscape:
 8. **Develop strategy** - How to win
 
 For detailed frameworks and examples, see `references/` and `examples/`.
+
+
+## Parent Hub
+- [_business-finance-mastery](../_business-finance-mastery/SKILL.md)

@@ -491,3 +491,7 @@ ORDER BY pg_relation_size(indexrelid) DESC;
 - **assets/query-optimization-checklist.md**: Step-by-step optimization guide
 - **scripts/analyze-slow-queries.sql**: Identify slow queries in your database
 - **scripts/index-recommendations.sql**: Generate index recommendations
+
+
+## Parent Hub
+- [_data-ai-mastery](../_data-ai-mastery/SKILL.md)

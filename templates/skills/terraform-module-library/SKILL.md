@@ -243,7 +243,11 @@ func TestVPCModule(t *testing.T) {
 }
 ```
 
-## Related Skills
 
-- `multi-cloud-architecture` - For architectural decisions
-- `cost-optimization` - For cost-effective designs
+## Parent Hub
+- [_devops-cloud-mastery](../_devops-cloud-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

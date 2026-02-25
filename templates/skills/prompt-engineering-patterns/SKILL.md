@@ -199,3 +199,7 @@ Track these KPIs for your prompts:
 3. Implement prompt versioning and A/B testing
 4. Set up automated evaluation pipelines
 5. Document your prompt engineering decisions and learnings
+
+
+## Parent Hub
+- [_data-ai-mastery](../_data-ai-mastery/SKILL.md)

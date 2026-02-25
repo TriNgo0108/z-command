@@ -517,3 +517,7 @@ Is this more important than Z for the organization?"
 8. **Disagree and commit** when decisions are made
 9. **Be the engineer you wish you had** when you were starting out
 10. **The goal is not to be right; it's to get it right**
+
+
+## Parent Hub
+- [_process-architecture-mastery](../_process-architecture-mastery/SKILL.md)

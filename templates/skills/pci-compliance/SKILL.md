@@ -464,3 +464,12 @@ PCI_COMPLIANCE_CHECKLIST = {
 5. **No Storage**: Never store full card details
 
 By minimizing systems that touch card data, you reduce compliance burden significantly.
+
+
+## Parent Hub
+- [_security-compliance-mastery](../_security-compliance-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-security-audit](../_workflow-security-audit/SKILL.md)

@@ -565,3 +565,12 @@ async def test_create_user(client):
 - **Ignoring Sessions**: Not properly managing database sessions
 - **No Testing**: Skipping integration tests
 - **Tight Coupling**: Direct database access in routes
+
+
+## Parent Hub
+- [_backend-mastery](../_backend-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)

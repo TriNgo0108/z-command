@@ -440,3 +440,7 @@ def test_payment_flow():
 - **Hardcoded Amounts**: Use cents/smallest currency unit
 - **No Retry Logic**: Implement retries for API calls
 - **Ignoring Test Mode**: Test all edge cases with test cards
+
+
+## Parent Hub
+- [_business-finance-mastery](../_business-finance-mastery/SKILL.md)

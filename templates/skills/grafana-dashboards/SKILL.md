@@ -754,3 +754,12 @@ Production/
 8. **Link traces to logs** via derived fields
 9. **Add context to alerts** with dashboard URLs
 10. **Organize with folders and tags**
+
+
+## Parent Hub
+- [_devops-cloud-mastery](../_devops-cloud-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-data-pipeline](../_workflow-data-pipeline/SKILL.md)

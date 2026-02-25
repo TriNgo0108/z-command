@@ -488,3 +488,7 @@ class CustomerActivityProjection(Projection):
 
 - [CQRS Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs)
 - [Projection Building Blocks](https://zimarev.com/blog/event-sourcing/projections/)
+
+
+## Parent Hub
+- [_backend-mastery](../_backend-mastery/SKILL.md)

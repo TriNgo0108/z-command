@@ -552,3 +552,7 @@ class ConsistentQueryHandler:
 
 - [CQRS Pattern](https://martinfowler.com/bliki/CQRS.html)
 - [Microsoft CQRS Guidance](https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs)
+
+
+## Parent Hub
+- [_backend-mastery](../_backend-mastery/SKILL.md)

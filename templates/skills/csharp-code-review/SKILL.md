@@ -643,3 +643,12 @@ if (needsCustomerInfo)
 6. **AsNoTracking()** - For read-only queries
 7. **Dispose Resources** - `using` for IDisposable
 8. **Use Modern C#** - Records, pattern matching, primary constructors
+
+
+## Parent Hub
+- [_backend-mastery](../_backend-mastery/SKILL.md)
+
+
+## Part of Workflow
+This skill is utilized in the following sequential workflows:
+- [_workflow-feature-lifecycle](../_workflow-feature-lifecycle/SKILL.md)
